@@ -4,8 +4,8 @@ class falco::repo inherits falco {
     'Debian': {
       include apt::update
 
-      Apt::Source [ 'falco' ]
-      -> Class [ 'apt::update' ]
+      Apt::Source[ 'falco' ]
+      -> Class[ 'apt::update' ]
 
       apt::source { 'falco':
         location => 'https://download.falco.org/packages/deb',
@@ -22,8 +22,8 @@ class falco::repo inherits falco {
     'RedHat': {
       include 'epel'
 
-      Yumrepo [ 'falco' ]
-      -> Class [ 'epel' ]
+      Yumrepo[ 'falco' ]
+      -> Class[ 'epel' ]
 
       yumrepo { 'falco':
         baseurl  => 'https://download.falco.org/packages/rpm',
